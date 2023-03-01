@@ -20,6 +20,26 @@
         <module>common-upgrade-starter</module>
     </modules>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:tangyueqiang/common-root.git</url>
+        <connection>scm:git:git@github.com:tangyueqiang/common-root.git</connection>
+        <developerConnection>scm:git:git@github.com:tangyueqiang/common-root.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <name>tangyueqiang</name>
+            <email>961493667@qq.com</email>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -82,6 +102,13 @@
                 <artifactId>junit</artifactId>
                 <version>4.13.2</version>
                 <scope>test</scope>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.sonatype.oss/oss-parent -->
+            <dependency>
+                <groupId>org.sonatype.oss</groupId>
+                <artifactId>oss-parent</artifactId>
+                <version>9</version>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
