@@ -1,0 +1,6 @@
+# 解决Spring Boot 6.x 与Swagger 3.0.0 不兼容问题
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
