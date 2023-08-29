@@ -2,15 +2,19 @@ package org.micro.commons.basic.beans;
 
 import com.alibaba.fastjson.JSONObject;
 
-public class Result {
+
+import static org.micro.commons.basic.beans.Result.ResultCode.FAIL;
+
+public class Result<T> {
 
     private int code = ResultCode.SUCESS;
     private String msg = "";
-    private Object model = null;
+    private T model = null;
+
     public Result() {
     }
 
-    public Result(Object model) {
+    public Result(T model) {
         this.model = model;
     }
 
@@ -19,7 +23,7 @@ public class Result {
         this.msg = msg;
     }
 
-    public Result(int code, String msg, Object model) {
+    public Result(int code, String msg, T model) {
         this.code = code;
         this.msg = msg;
         this.model = model;
@@ -41,11 +45,11 @@ public class Result {
         this.msg = msg;
     }
 
-    public Object getModel() {
+    public T getModel() {
         return model;
     }
 
-    public void setModel(Object model) {
+    public void setModel(T model) {
         this.model = model;
     }
 
@@ -61,14 +65,17 @@ public class Result {
 
         public static final int SUCESS = 0;
         public static final int FAIL = 1;
-        /**
-         * 临时登录
-         **/
-        public static final int TMP_LOGIN = -1;
-        /**
-         * 未登录
-         **/
-        public static final int NOT_LOGIN = -2;
     }
 
+    public static <T> Result<T> success() {
+        return new Result<>();
+    }
+
+    public static <T> Result<T> success(T model) {
+        return new Result<>(model);
+    }
+
+    public static <T> Result<T> success(String msg) {
+        return new Result<>(FAIL, msg);
+    }
 }
